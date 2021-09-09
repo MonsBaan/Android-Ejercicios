@@ -10,9 +10,8 @@
     <LinearLayout
         android:id="@+id/LLMain"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -20,101 +19,184 @@
         <LinearLayout
             android:id="@+id/LLTop"
             android:layout_width="match_parent"
-            android:layout_height="67dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/tvTop"
-                android:layout_width="wrap_content"
+                style="@style/titulo"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:text="Agenda de Contactos"
+                android:background="@drawable/cabecera"
+                android:text="@string/agenda_de_contactos"
                 android:textAlignment="center"
-                android:textSize="30dp" />
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/LLMid"
             android:layout_width="match_parent"
-            android:layout_height="600dp"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:id="@+id/LLLinea1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:id="@+id/LLBtn1"
-                    android:layout_width="198dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageButton
-                        android:id="@+id/imgBtn1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/nuevo" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/LLBtn2"
-                    android:layout_width="212dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageButton
-                        android:id="@+id/imgBtn2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/calendar" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/LLLinea2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:id="@+id/LLBtn3"
-                    android:layout_width="198dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageButton
-                        android:id="@+id/imgBtn3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/nuevo" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/LLBtn3"
-                    android:layout_width="212dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageButton
-                        android:id="@+id/imgBtn3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/calendar" />
-                </LinearLayout>
-
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/LLBottom"
-            android:layout_width="match_parent"
-            android:layout_height="66dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="15dp"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/imageButton5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="@string/todo"
+                            app:srcCompat="@drawable/btnnuevo"
+                            tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                        <TextView
+                            android:id="@+id/tvNuevo"
+                            style="@style/sombraTexto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="@string/nuevo"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            tools:ignore="TextContrastCheck" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="15dp"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/imageButton6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="@string/todo"
+                            app:srcCompat="@drawable/btncalendario"
+                            tools:ignore="ImageContrastCheck" />
+
+                        <TextView
+                            android:id="@+id/tvCalendario"
+                            style="@style/sombraTexto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="@string/calendario"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            tools:ignore="TextContrastCheck" />
+                    </LinearLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="15dp"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/imageButton7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="@string/todo"
+                            app:srcCompat="@drawable/btnusers"
+                            tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
+                        <TextView
+                            android:id="@+id/tvContactos"
+                            style="@style/sombraTexto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="@string/contactos"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            tools:ignore="TextContrastCheck" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="15dp"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/imageButton8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:contentDescription="@string/todo"
+                            app:srcCompat="@drawable/btnsave"
+                            tools:ignore="ImageContrastCheck,SpeakableTextPresentCheck" />
+
+                        <TextView
+                            android:id="@+id/tvOpciones"
+                            style="@style/sombraTexto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="@string/opciones"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            tools:ignore="TextContrastCheck" />
+                    </LinearLayout>
+                </TableRow>
+
+            </TableLayout>
         </LinearLayout>
+
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="66dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LLMain"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/tvFinDiseño"
+            style="@style/titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/finDiseño"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/tvCentro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/centro_de_estudios_almi"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
