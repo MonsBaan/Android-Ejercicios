@@ -2,4 +2,18 @@
     <string name="app_name">Tremenda PruebaTruco</string>
     <string name="titulo1">Centro de Estudios Almi</string>
     <string name="curso">DAM1</string>
+    <string name="pie">www.almi.eus</string>
+    <string name="toast">TOAST</string>
+    <string name="asynctask">ASYNCTASK</string>
+    <string name="adapter">ADAPTER</string>
+    <string name="frame">FRAME BY FRAME</string>
+    <string name="tween">TWEEN</string>
+    <string name="property">PROPERTY</string>
+    <string name="boton_1">Boton 1</string>
+    <string name="boton_2">Boton 2</string>
+    <string name="boton_3">Boton 3</string>
+    <string name="boton_4">Boton 4</string>
+    <string name="boton_5">Boton 5</string>
+    <string name="boton_6">Boton 6</string>
+    <string name="todo">TODO</string>
 </resources>

@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:id="@+id/LLCabecera"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/rojo"
+        android:background="@drawable/cabecera"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,41 +23,229 @@
 
         <TextView
             android:id="@+id/tvTitulo"
+            style="@style/cursoTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
+            android:fontFamily="sans-serif"
             android:text="@string/titulo1"
             android:textAlignment="center"
-            android:textSize="24sp"
-            style="@style/cursoTitulo"
-            />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/tvCurso"
+            style="@style/cursoTitulo.subtitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
+            android:fontFamily="sans-serif"
             android:text="@string/curso"
             android:textAlignment="center"
             android:textColor="#212121"
-            android:textSize="24sp"
-            style="@style/cursoTitulo.subtitulo"
-            />
+            android:textSize="24sp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/LLCuerpo"
         android:layout_width="0dp"
-        android:layout_height="504dp"
-        android:background="@color/gris"
+        android:layout_height="474dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LLCabecera"
-        app:layout_constraintVertical_bias="0.0"></LinearLayout>
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:id="@+id/LLPrimeraLinea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/LLBtn1"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/imgBtn1"
+                    android:layout_width="match_parent"
+                    android:layout_height="121dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/fondoboton"
+                    android:clickable="true"
+                    android:contentDescription="@string/todo"
+                    android:focusable="true"
+                    android:scaleType="fitCenter"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+
+                <TextView
+                    android:id="@+id/tvBtn1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:clickable="false"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/boton_1"
+                    android:textAlignment="center"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LLBtn2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/imgBtn2"
+                    android:layout_width="match_parent"
+                    android:layout_height="121dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/fondoboton"
+                    android:contentDescription="@string/todo"
+                    android:scaleType="fitCenter" />
+
+                <TextView
+                    android:id="@+id/tvBtn2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:clickable="false"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/boton_2"
+                    android:textAlignment="center"
+                    android:textColor="#000000" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LLSegundaLinea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/LLBtn3"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/imgBtn3"
+                    android:layout_width="match_parent"
+                    android:layout_height="121dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/fondoboton"
+                    android:clickable="true"
+                    android:contentDescription="@string/todo"
+                    android:focusable="true"
+                    android:scaleType="fitCenter" />
+
+                <TextView
+                    android:id="@+id/tvBtn3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:clickable="false"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/boton_3"
+                    android:textAlignment="center"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LLBtn4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/imgBtn4"
+                    android:layout_width="match_parent"
+                    android:layout_height="121dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/fondoboton"
+                    android:contentDescription="@string/todo"
+                    android:scaleType="fitCenter" />
+
+                <TextView
+                    android:id="@+id/tvBtn4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:clickable="false"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/boton_4"
+                    android:textAlignment="center"
+                    android:textColor="#000000" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LLTerceraLinea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/LLBtn5"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/imgBtn5"
+                    android:layout_width="match_parent"
+                    android:layout_height="121dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/fondoboton"
+                    android:clickable="true"
+                    android:contentDescription="@string/todo"
+                    android:focusable="true"
+                    android:scaleType="fitCenter" />
+
+                <TextView
+                    android:id="@+id/tvBtn5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:clickable="false"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/boton_5"
+                    android:textAlignment="center"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LLBtn6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/imgBtn6"
+                    android:layout_width="match_parent"
+                    android:layout_height="121dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/fondoboton"
+                    android:contentDescription="@string/todo"
+                    android:scaleType="fitCenter" />
+
+                <TextView
+                    android:id="@+id/tvBtn6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:clickable="false"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/boton_6"
+                    android:textAlignment="center"
+                    android:textColor="#000000" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/LLPie"
@@ -69,6 +258,18 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LLCuerpo"
-        app:layout_constraintVertical_bias="0.0"></LinearLayout>
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/tvPie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="sans-serif"
+            android:gravity="center_vertical"
+            android:text="@string/pie"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
