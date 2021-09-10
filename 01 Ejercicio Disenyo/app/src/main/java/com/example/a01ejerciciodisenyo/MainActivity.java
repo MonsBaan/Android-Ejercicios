@@ -2,6 +2,7 @@ package com.example.a01ejerciciodisenyo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -20,8 +21,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageButton btnNuevo = findViewById(R.id.imgBtnNuevo);
-
         //CREAR TOAST PERSONALIZADO
         final int duracion = Toast.LENGTH_SHORT;
         LayoutInflater inflater = getLayoutInflater();
@@ -33,10 +32,11 @@ public class MainActivity extends AppCompatActivity {
         textoToast.setText("Albertxigo");
 
         //CAMBIAR IMAGEN A TOAST PERSONALIZADO
-        ImageView fotoToast =miToast.findViewById(R.id.ivToast);
+        ImageView fotoToast = miToast.findViewById(R.id.ivToast);
         fotoToast.setImageResource(R.drawable.ic_launcher_background);
 
-
+        //CAPTURA DE EVENTO DEL BOTON
+        ImageButton btnNuevo = findViewById(R.id.imgBtnNuevo);
         btnNuevo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,6 +50,23 @@ public class MainActivity extends AppCompatActivity {
                 toast.show();
             }
         });
+
+        //ENLACE CON ASYNTASK
+        ImageButton btnCalendario = findViewById(R.id.imgBtnCalendario);
+
+        btnCalendario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString("saludo", "Hola Curso Dam");
+                Intent intent = new Intent(getApplicationContext(), AsyntaskDam2.class);
+                intent.putExtras(bundle);
+
+                startActivity(intent);
+            }
+        });
+
+
     }
 
 

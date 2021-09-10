@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.01EjercicioDisenyo">
         <activity
+            android:name=".AsyntaskDam2"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
