@@ -7,10 +7,21 @@
         <item>ASIR 2</item>
 
     </string-array>
-    <string-array name="imagenes">
+    <string-array name="niño">
         <item>@drawable/andando1</item>
         <item>@drawable/andando2</item>
         <item>@drawable/andando3</item>
         <item>@drawable/andando4</item>
+    </string-array>
+    <string-array name="caballo">
+        <item>@drawable/caballo1</item>
+        <item>@drawable/caballo2</item>
+        <item>@drawable/caballo3</item>
+        <item>@drawable/caballo4</item>
+        <item>@drawable/caballo5</item>
+        <item>@drawable/caballo6</item>
+        <item>@drawable/caballo7</item>
+        <item>@drawable/caballo8</item>
+
     </string-array>
 </resources>

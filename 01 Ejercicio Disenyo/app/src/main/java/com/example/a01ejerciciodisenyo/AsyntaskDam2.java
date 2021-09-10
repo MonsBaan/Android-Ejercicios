@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -20,10 +21,9 @@ public class AsyntaskDam2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle bundle = getIntent().getExtras();
-        if (!bundle.isEmpty()){
-            Toast.makeText(getApplicationContext(),bundle.getString("saludo"), Toast.LENGTH_SHORT).show();
+        if (!bundle.isEmpty()) {
+            Toast.makeText(getApplicationContext(), bundle.getString("saludo"), Toast.LENGTH_SHORT).show();
         }
-
 
 
         setContentView(R.layout.activity_asyntask_dam2);
@@ -33,7 +33,7 @@ public class AsyntaskDam2 extends AppCompatActivity {
         texto = findViewById(R.id.tvAnimacion);
 
         //CARGAMOS EL ARRAY DE FOTOS
-        imagenes = getResources().obtainTypedArray(R.array.imagenes);
+        imagenes = getResources().obtainTypedArray(R.array.niño);
 
         //INICIALIZAMOS LA BARRA
         barra.setMax(100);

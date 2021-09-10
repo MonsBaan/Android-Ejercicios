@@ -61,11 +61,19 @@ public class MainActivity extends AppCompatActivity {
                 bundle.putString("saludo", "Hola Curso Dam");
                 Intent intent = new Intent(getApplicationContext(), AsyntaskDam2.class);
                 intent.putExtras(bundle);
-
                 startActivity(intent);
             }
         });
 
+        //ENLACE CON CABALLOPANTALLA
+        ImageButton btnContactos = findViewById(R.id.imgBtnContactos);
+
+        btnContactos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), CaballoPantalla.class);
+                startActivity(intent);            }
+        });
 
     }
 
