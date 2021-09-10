@@ -57,7 +57,7 @@
                         android:orientation="vertical">
 
                         <ImageButton
-                            android:id="@+id/imageButton5"
+                            android:id="@+id/imgBtnNuevo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@android:color/transparent"
@@ -84,7 +84,7 @@
                         android:orientation="vertical">
 
                         <ImageButton
-                            android:id="@+id/imageButton6"
+                            android:id="@+id/imgBtnCalendario"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@android:color/transparent"
@@ -118,7 +118,7 @@
                         android:orientation="vertical">
 
                         <ImageButton
-                            android:id="@+id/imageButton7"
+                            android:id="@+id/imgBtnContactos"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@android:color/transparent"
@@ -145,7 +145,7 @@
                         android:orientation="vertical">
 
                         <ImageButton
-                            android:id="@+id/imageButton8"
+                            android:id="@+id/imgBtnOpciones"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@android:color/transparent"
@@ -188,7 +188,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/finDiseño"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            tools:ignore="TextContrastCheck" />
 
         <TextView
             android:id="@+id/tvCentro"
@@ -196,7 +197,8 @@
             android:layout_height="wrap_content"
             android:text="@string/centro_de_estudios_almi"
             android:textAlignment="center"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            tools:ignore="TextContrastCheck" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
