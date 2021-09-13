@@ -11,7 +11,8 @@ import android.widget.Toast;
 import java.time.Instant;
 
 public class MainActivity extends AppCompatActivity {
-    private Button btnListView, btnSpinner, btnGridView = null;
+    private Button btnListView, btnSpinner, btnGridView, btnSpinnerEjercicio = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,16 +20,13 @@ public class MainActivity extends AppCompatActivity {
         btnListView = findViewById(R.id.btnListView);
         btnSpinner = findViewById(R.id.btnSpinner);
         btnGridView = findViewById(R.id.btnGridView);
-
-
-
-
+        btnSpinnerEjercicio = findViewById(R.id.btnSpinnerEjercicio);
 
 
         btnListView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"ListView", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "ListView", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(getApplicationContext(), ListActivity.class);
                 startActivity(intent);
@@ -38,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         btnSpinner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Spinner", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Spinner", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), SpinnerActivity.class);
                 startActivity(intent);
             }
@@ -47,8 +45,18 @@ public class MainActivity extends AppCompatActivity {
         btnGridView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"GridView", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "GridView", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), GridActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnSpinnerEjercicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Ejercicio Spinner 1", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(getApplicationContext(), SpinnerEjercicio1.class);
                 startActivity(intent);
             }
         });

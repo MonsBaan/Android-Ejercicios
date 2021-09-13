@@ -8,6 +8,16 @@
 
     </string-array>
 
+    <string-array name="alumnos">
+        <item>Ibai Marin</item>
+        <item>Mikel Lorenzo</item>
+        <item>Ane Gaminde</item>
+        <item>Christian Rojas</item>
+        <item>Aitor Sobera</item>
+        <item>Ane Basagoiti</item>
+        <item>Jon Manzanos</item>
+    </string-array>
+
 
 
 </resources>

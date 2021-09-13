@@ -9,7 +9,6 @@ import android.widget.Spinner;
 
 public class SpinnerActivity extends AppCompatActivity {
     private Spinner sp = null;
-    private int ver = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
