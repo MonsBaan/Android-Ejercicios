@@ -28,16 +28,11 @@ public class HiloDam2 extends AppCompatActivity {
         pbHilo.setProgress(0);
 
         //INSTANCIAMOS EL NUEVO HILO
-        //CaballoCorriendo hilo = new CaballoCorriendo(this);
 
         AsyntaskEjercicio hilo = new AsyntaskEjercicio(this);
-        hilo.execute();
-
-        //INSTANCIAMOS EL EXECUTOR
-        //EjecutarHilo ejecutarHilo = new EjecutarHilo();
 
         //EJECUTAR HILO
-        //ejecutarHilo.execute(hilo);
+        hilo.execute();
 
     }
 
