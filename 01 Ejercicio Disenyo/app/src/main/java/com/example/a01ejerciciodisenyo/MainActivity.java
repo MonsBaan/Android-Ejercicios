@@ -71,9 +71,11 @@ public class MainActivity extends AppCompatActivity {
         btnContactos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), CaballoPantalla.class);
+                Intent intent = new Intent(getApplicationContext(), ActivityFrame.class);
                 startActivity(intent);            }
         });
+
+
 
     }
 
@@ -83,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     /* Toast OnClick activity_main.xml
-
     public void toastMsg(View view) {
         Toast toast = Toast.makeText(this, "Cagaste Guacho",Toast.LENGTH_LONG);
         toast.show();
