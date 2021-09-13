@@ -23,7 +23,7 @@ public class AnimacionCaballo implements Runnable{
                 }
                 //parent.getImgCaballo().setImageResource(parent.getFrames().getResourceId(frame, -1));
 
-                parent.getImgCaballo().setImageResource(parent.getFrames().getResourceId(frame, -1));
+                //parent.getImgCaballo().setImageResource(parent.getFrames().getResourceId(frame, -1));
                 parent.getPorcentaje().setText(i+"%");
 
 

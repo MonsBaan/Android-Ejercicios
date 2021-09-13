@@ -73,4 +73,5 @@ public class CaballoPantalla extends AppCompatActivity {
     public void setBarra(ProgressBar barra) {
         this.barra = barra;
     }
+
 }
