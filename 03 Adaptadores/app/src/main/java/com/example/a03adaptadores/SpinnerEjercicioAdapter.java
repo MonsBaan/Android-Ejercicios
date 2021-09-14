@@ -2,7 +2,6 @@ package com.example.a03adaptadores;
 
 import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,15 +31,15 @@ public class SpinnerEjercicioAdapter extends ArrayAdapter {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        return getCustomView(position, convertView, parent);
+        return getCustomView(position, parent);
     }
 
     @Override
     public View getDropDownView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        return getCustomView(position, convertView, parent);
+        return getCustomView(position, parent);
     }
 
-    public View getCustomView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getCustomView(int position, @NonNull ViewGroup parent) {
 
         LayoutInflater inflater = ((Activity) context).getLayoutInflater();
         View fila = inflater.inflate(R.layout.spinner_ejercicio1, parent, false);
