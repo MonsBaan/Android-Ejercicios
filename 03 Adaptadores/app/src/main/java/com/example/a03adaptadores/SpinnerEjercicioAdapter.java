@@ -15,7 +15,7 @@ import androidx.annotation.Nullable;
 public class SpinnerEjercicioAdapter extends ArrayAdapter {
     private Context context;
     private String[] datos;
-    private Alumno alumno;
+    private Alumno alumno = new Alumno();
 
     public SpinnerEjercicioAdapter(@NonNull Context context, int resource, @NonNull String[] datos) {
         super(context, resource, datos);
@@ -41,6 +41,7 @@ public class SpinnerEjercicioAdapter extends ArrayAdapter {
     }
 
     public View getCustomView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+
         LayoutInflater inflater = ((Activity) context).getLayoutInflater();
         View fila = inflater.inflate(R.layout.spinner_ejercicio1, parent, false);
         TextView textoFilaNombre = fila.findViewById(R.id.tvNombre);
@@ -50,13 +51,8 @@ public class SpinnerEjercicioAdapter extends ArrayAdapter {
             textoFilaNombre.setText("Escoge una Opcion:");
             textoFilaApellidos.setText("");
         } else {
-            //textoFilaNombre.setText(alumno.getAlumno(datos, position -1));
-            //textoFilaApellidos.setText(alumno.getApellido(datos, position -1));
-
-
-
-
-
+            textoFilaNombre.setText(alumno.getNombre(datos[position - 1]));
+            textoFilaApellidos.setText(alumno.getApellido(datos[position - 1]));
 
             /*
             Metodo Toloko
