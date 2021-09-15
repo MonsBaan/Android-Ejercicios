@@ -1,6 +1,7 @@
 package com.example.a03ejerciciosergio;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,10 +46,14 @@ public class ImagePersonajesAdapter extends BaseAdapter {
         View imagePersonajes = inflater.inflate(R.layout.activity_personajes_grid_layout, null);
         ImageView ivPersonajes = imagePersonajes.findViewById(R.id.ivPersonajes);
 
+
         personaje = personajesAnime.get(i).split(" ");
+
         nombrePersonaje = personaje[1];
         imagenPersonaje = personaje[2];
 
+
+        Log.d("datos", imagenPersonaje);
 
 
         Glide.with(context).load(imagenPersonaje).into(ivPersonajes);
