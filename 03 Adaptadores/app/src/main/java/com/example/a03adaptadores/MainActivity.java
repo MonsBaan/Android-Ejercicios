@@ -2,6 +2,7 @@ package com.example.a03adaptadores;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         btnSpinner = findViewById(R.id.btnSpinner);
         btnGridView = findViewById(R.id.btnGridView);
         btnSpinnerEjercicio = findViewById(R.id.btnSpinnerEjercicio);
+        final MainActivity miActividad = this;
 
 
         btnListView.setOnClickListener(new View.OnClickListener() {
@@ -29,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "ListView", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(getApplicationContext(), ListActivity.class);
-                startActivity(intent);
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(miActividad).toBundle());
+
             }
         });
 
@@ -41,13 +44,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
         btnGridView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "GridView", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), GridActivity.class);
-                startActivity(intent);
+
+
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(miActividad).toBundle());
             }
         });
 

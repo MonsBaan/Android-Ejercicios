@@ -2,7 +2,10 @@ package com.example.a03adaptadores;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityOptions;
 import android.os.Bundle;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -13,6 +16,10 @@ public class ListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Transition transicion = TransitionInflater.from(this).inflateTransition(R.transition.explode_dam);
+        getWindow().setEnterTransition(transicion);
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 

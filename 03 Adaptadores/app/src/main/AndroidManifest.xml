@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.03Adaptadores">
         <activity
+            android:name=".DetalleActivity"
+            android:exported="true" />
+        <activity
             android:name=".SpinnerEjercicio1"
             android:exported="true" />
         <activity
