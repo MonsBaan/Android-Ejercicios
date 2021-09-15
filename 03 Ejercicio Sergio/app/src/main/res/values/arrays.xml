@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="animes">
+        <item>One_Piece https://e7.pngegg.com/pngimages/58/44/png-clipart-monkey-d-luffy-gol-d-roger-roronoa-zoro-portgas-d-ace-trafalgar-d-water-law-monkey-d-luffy-one-piece-flag-jolly-roger.png</item>
+        <item>Naruto https://img.icons8.com/wired/512/naruto.png</item>
+        <item>Boku_no_Hero https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/99b0b4b2-1ec2-42db-8d72-689653733407/dc6oy1m-c4a0b0bc-3578-4e41-a340-964f9448932d.png</item>
+        <item>Boruto https://e1.pngegg.com/pngimages/208/785/png-clipart-boruto-folder-icon-v5-boruto-folder-icon-v5-thumbnail.png</item>
+        <item></item>
+    </string-array>
+    <string-array name="personajes">
+        <item>OnePiece Luffy https://elcomercio.pe/resizer/xJ2z3Geb28JVnMhSknmPC_2KQhQ=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/NG4OXH2E65FZLDFCYTHPSGJT5Q.png</item>
+        <item>OnePiece Nami https://spoiler.bolavip.com/__export/1608773550424/sites/bolavip/img/2020/12/23/nami_one_piece_crop1608773549935.jpg_1693159006.jpg</item>
+        <item>OnePiece Zoro https://www.megaotaku.com/15461-medium_default/one-piece-grandista-roronoa-zoro-manga-dimensions.jpg</item>
+        <item>OnePiece Sanji https://laverdadnoticias.com/__export/1613844460839/sites/laverdad/img/2021/02/20/sanji_one_piece_anime.jpg_759710130.jpg</item>
+        <item>OnePiece Usopp https://i.pinimg.com/474x/ea/8d/20/ea8d2010401158ff7c3f255711ba9de0.jpg</item>
+        <item>OnePiece Chopper https://cdn.alfabetajuega.com/wp-content/uploads/2021/02/chopper.jpeg</item>
+        <item>OnePiece Brook https://areajugones.sport.es/wp-content/uploads/2020/01/one-piece-brook.jpg</item>
+        <item>OnePiece Robin https://spoiler.bolavip.com/__export/1605022648356/sites/bolavip/img/2020/11/10/one_piece_los_mejores_trajes_de_nico_robin_crop1605022647866.jpg_1693159006.jpg</item>
+        <item>OnePiece Franky https://cdn.alfabetajuega.com/wp-content/uploads/2020/08/Franky.jpg</item>
+
+        <item>Naruto Naruto </item>
+        <item>Naruto Naruto </item>
+        <item>Naruto Naruto </item>
+        <item>Naruto Naruto </item>
+        <item>Naruto Naruto </item>
+        <item>Naruto Naruto </item>
+        <item>Naruto Naruto </item>
+        <item>Naruto Naruto </item>
+        <item>Naruto Naruto </item>
+
+        <item>BokuNoHero Naruto </item>
+        <item>BokuNoHero Naruto </item>
+        <item>BokuNoHero Naruto </item>
+        <item>BokuNoHero Naruto </item>
+        <item>BokuNoHero Naruto </item>
+        <item>BokuNoHero Naruto </item>
+        <item>BokuNoHero Naruto </item>
+        <item>BokuNoHero Naruto </item>
+        <item>BokuNoHero Naruto </item>
+
+        <item>Boruto Naruto</item>
+        <item>Boruto Naruto</item>
+        <item>Boruto Naruto</item>
+        <item>Boruto Naruto</item>
+        <item>Boruto Naruto</item>
+        <item>Boruto Naruto</item>
+        <item>Boruto Naruto</item>
+        <item>Boruto Naruto</item>
+        <item>Boruto Naruto</item>
+
+
+    </string-array>
+
+
+</resources>
