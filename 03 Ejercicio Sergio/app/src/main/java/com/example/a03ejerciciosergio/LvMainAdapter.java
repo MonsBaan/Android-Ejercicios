@@ -18,13 +18,10 @@ public class LvMainAdapter extends BaseAdapter {
     private ImageView ivAnime = null;
     private TextView tvAnime = null;
     private String[] animes = null;
-    private Splitter splitter = null;
-    private Object Splitter;
 
     public LvMainAdapter(Context context, int activity_main_list_layout, String[] animes) {
         this.context = context;
         this.animes = animes;
-        Splitter splitter = new Splitter();
     }
 
     @Override
@@ -51,7 +48,7 @@ public class LvMainAdapter extends BaseAdapter {
         } else {
             View fila = inflater.inflate(R.layout.activity_main_list_layout, null);
 
-            String[] anime = Split(animes[i -1], " ");
+            String[] anime = separarString(animes[i -1], " ");
 
             TextView tvAnime = fila.findViewById(R.id.tvAnime);
 
@@ -86,7 +83,7 @@ public class LvMainAdapter extends BaseAdapter {
 
 
     }
-    private String[] Split(String textoOriginal, String filtro) {
+    private String[] separarString(String textoOriginal, String filtro) {
         return textoOriginal.split(filtro);
     }
 

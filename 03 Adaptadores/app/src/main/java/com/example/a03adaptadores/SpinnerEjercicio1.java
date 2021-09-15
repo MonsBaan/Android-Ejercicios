@@ -28,10 +28,8 @@ public class SpinnerEjercicio1 extends AppCompatActivity {
         sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String nombreAnime =
                 if (ver == 1 && i>0){
                     Toast.makeText(adapterView.getContext(), adapterView.getItemAtPosition(i - 1).toString(), Toast.LENGTH_SHORT).show();
-
                 }
                 ver = 1;
             }

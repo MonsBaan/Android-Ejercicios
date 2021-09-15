@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String[] animeNombreSplit = null;
                 String animeNombreTrim = "";
-                animeNombreSplit = Split(adapterView.getItemAtPosition(i - 1).toString(), " ");
+                animeNombreSplit = separarString(adapterView.getItemAtPosition(i - 1).toString(), " ");
                 for (int j = 0; j < animeNombreSplit[0].length(); j++) {
                     if (animeNombreSplit[0].charAt(j) != '_'){
                         animeNombreTrim += animeNombreSplit[0].charAt(j);
@@ -43,12 +43,14 @@ public class MainActivity extends AppCompatActivity {
                 bundle.putString("anime", animeNombreTrim);
                 Intent intent = new Intent(getApplicationContext(), PersonajesActivity.class);
                 intent.putExtras(bundle);
+
+                //ACTIVIDAD PERSONAJESACTIVITY
                 startActivity(intent);
             }
         });
     }
 
-    private String[] Split(String textoOriginal, String filtro) {
+    private String[] separarString(String textoOriginal, String filtro) {
         return textoOriginal.split(filtro);
     }
 
