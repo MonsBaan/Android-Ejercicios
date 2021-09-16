@@ -11,7 +11,6 @@
         android:id="@+id/ivDetalle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,6 +25,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lorem fistrum amatomaa sexuarl ahorarr benemeritaar está la cosa muy malar a peich. Benemeritaar condemor está la cosa muy malar ese que llega ese pedazo de caballo blanco caballo negroorl benemeritaar se calle ustée jarl. Pecador apetecan caballo blanco caballo negroorl va usté muy cargadoo tiene musho peligro se calle ustée. Mamaar te voy a borrar el cerito a wan va usté muy cargadoo papaar papaar fistro a peich hasta luego Lucas caballo blanco caballo negroorl. Tiene musho peligro hasta luego Lucas ese pedazo de te voy a borrar el cerito papaar papaar. Ese hombree quietooor caballo blanco caballo negroorl no puedor a wan pupita. No te digo trigo por no llamarte Rodrigor ese hombree a peich benemeritaar quietooor no te digo trigo por no llamarte Rodrigor. Está la cosa muy malar diodeno va usté muy cargadoo ahorarr. Está la cosa muy malar apetecan fistro me cago en tus muelas benemeritaar fistro no te digo trigo por no llamarte Rodrigor la caidita por la gloria de mi madre a gramenawer ahorarr."
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lorem fistrum va usté muy cargadoo quietooor está la cosa muy malar. Ese que llega condemor a peich por la gloria de mi madre me cago en tus muelas te voy a borrar el cerito quietooor al ataquerl de la pradera llevame al sircoo torpedo. Amatomaa papaar papaar te va a hasé pupitaa ese que llega apetecan va usté muy cargadoo. Llevame al sircoo te voy a borrar el cerito pupita jarl. Amatomaa pupita ahorarr la caidita se calle ustée se calle ustée se calle ustée. Apetecan caballo blanco caballo negroorl jarl papaar papaar a wan. Tiene musho peligro por la gloria de mi madre de la pradera la caidita me cago en tus muelas amatomaa jarl mamaar sexuarl. Diodenoo no puedor fistro por la gloria de mi madre va usté muy cargadoo. Tiene musho peligro ese hombree ese que llega qué dise usteer no te digo trigo por no llamarte Rodrigor por la gloria de mi madre pupita a gramenawer diodenoo por la gloria de mi madre benemeritaar.  "
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
