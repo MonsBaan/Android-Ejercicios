@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_rojo"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Rojo" />
+        <item
+            android:id="@+id/nav_verde"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Verde" />
+        <item
+            android:id="@+id/nav_blanco"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Blanco" />
+    </group>
+</menu>

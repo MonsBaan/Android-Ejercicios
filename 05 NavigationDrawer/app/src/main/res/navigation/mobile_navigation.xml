@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_blanco">
+    <fragment
+        android:id="@+id/nav_blanco"
+        android:name="com.example.navigationdrawer.ui.blanco.BlancoFragment"
+        android:label="blanco_fragment"
+        tools:layout="@layout/blanco_fragment" />
+    <fragment
+        android:id="@+id/nav_rojo"
+        android:name="com.example.navigationdrawer.ui.rojo.RojoFragment"
+        android:label="rojo_fragment"
+        tools:layout="@layout/rojo_fragment" />
+    <fragment
+        android:id="@+id/nav_verde"
+        android:name="com.example.navigationdrawer.ui.verde.VerdeFragment"
+        android:label="verde_fragment"
+        tools:layout="@layout/verde_fragment" />
+    <fragment
+        android:id="@+id/nav_azul"
+        android:name="com.example.navigationdrawer.ui.azul.FragmentoAzul"
+        android:label="fragmento_azul_fragment"
+        tools:layout="@layout/fragmento_azul_fragment" />
+</navigation>

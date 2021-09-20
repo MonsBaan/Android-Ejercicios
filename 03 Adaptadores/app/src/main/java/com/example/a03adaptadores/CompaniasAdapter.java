@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class CompaniasAdapter extends BaseAdapter {
 
     private Context context = null;
-    ArrayList<CompaniaTelefonica> companiaTelefonicas = new ArrayList<CompaniaTelefonica>();
+    ArrayList<CompaniaTelefonica> companiaTelefonicas = null;
 
     public CompaniasAdapter(Context context, ArrayList<CompaniaTelefonica> companiaTelefonicas) {
         this.context = context;
