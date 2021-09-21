@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 
 import com.example.a06dialogpersonalizado.model.Usuario;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UsuariosAdapter extends ArrayAdapter {
@@ -20,6 +21,8 @@ public class UsuariosAdapter extends ArrayAdapter {
 
     public UsuariosAdapter(@NonNull Context context, int resource) {
         super(context, resource);
+        this.context = context;
+        mUsuarioList = new ArrayList<>();
     }
 
     @Override
@@ -46,6 +49,7 @@ public class UsuariosAdapter extends ArrayAdapter {
 
     public void setmUsuarioList(List<Usuario> mUsuarioList) {
         this.mUsuarioList = mUsuarioList;
+        notifyDataSetChanged();
     }
 
     public List<Usuario> getmUsuarioList() {

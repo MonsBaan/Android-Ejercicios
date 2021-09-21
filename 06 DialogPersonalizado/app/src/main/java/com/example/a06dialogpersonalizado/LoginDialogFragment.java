@@ -15,9 +15,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
+import com.example.a06dialogpersonalizado.bbdd.AppDatabase;
+import com.example.a06dialogpersonalizado.bbdd.AppExecutors;
+import com.example.a06dialogpersonalizado.model.Usuario;
+
 public class LoginDialogFragment extends DialogFragment {
     private EditText etNombre, etPass = null;
     private Button btnAceptar, btnCancelar = null;
+    private AppDatabase mDb = null;
 
     public LoginDialogFragment() {
         super();
@@ -66,16 +71,27 @@ public class LoginDialogFragment extends DialogFragment {
         btnAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mDb = AppDatabase.getInstance(getContext());
+
                 String nombre = etNombre.getText().toString();
                 String pass = etPass.getText().toString();
-                if (nombre.equals("Almi") && pass.equals("Almi123")) {
-                    Toast.makeText(getContext(), "Bienvenido", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getContext(), CentralActivity.class);
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(getContext(), "N O", Toast.LENGTH_SHORT).show();
-                    dismiss();
-                }
+
+                AppExecutors.getInstance().getDiskIP().execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        Usuario usu = mDb.usuariosDao().loadUsuarioByNamePass(nombre, pass);
+                        if (usu != null) {
+                            //Toast.makeText(getContext(), "Bienvenido", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getContext(), CentralActivity.class);
+                            startActivity(intent);
+                        } else {
+                            //Toast.makeText(getContext(), "N O", Toast.LENGTH_SHORT).show();
+                            dismiss();
+                        }
+
+                    }
+                });
+
             }
         });
     }
