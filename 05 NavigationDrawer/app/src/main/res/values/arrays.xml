@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="cursos">
+        <item>DAM 1</item>
+        <item>DAM 2</item>
+        <item>ASIR 1</item>
+        <item>ASIR 2</item>
+        <item>SMR 1</item>
+        <item>SMR 2</item>
+    </string-array>
+
+    <array name="almiInterior">
+        <item>@drawable/interior_1</item>
+        <item>@drawable/interior_2</item>
+        <item>@drawable/interior_3</item>
+        <item>@drawable/interior_4</item>
+        <item>@drawable/interior_5</item>
+        <item>@drawable/interior_6</item>
+        <item>@drawable/interior_7</item>
+        <item>@drawable/interior_8</item>
+        <item>@drawable/interior_9</item>
+    </array>
+
+    <array name="almiExterior">
+        <item>@drawable/exterior_1</item>
+        <item>@drawable/exterior_2</item>
+        <item>@drawable/exterior_3</item>
+    </array>
+</resources>
