@@ -32,7 +32,7 @@
         app:layout_constraintVertical_bias="0.02" />
 
     <Button
-        android:id="@+id/btnVoz"
+        android:id="@+id/btnSensorVoz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
@@ -59,9 +59,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Volley"
-        app:layout_constraintEnd_toEndOf="@+id/btnVoz"
+        app:layout_constraintEnd_toEndOf="@+id/btnSensorVoz"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/btnVoz"
-        app:layout_constraintTop_toBottomOf="@+id/btnVoz" />
+        app:layout_constraintStart_toStartOf="@+id/btnSensorVoz"
+        app:layout_constraintTop_toBottomOf="@+id/btnSensorVoz" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

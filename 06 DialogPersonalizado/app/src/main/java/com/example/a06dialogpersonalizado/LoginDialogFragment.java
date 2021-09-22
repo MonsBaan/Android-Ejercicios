@@ -71,7 +71,17 @@ public class LoginDialogFragment extends DialogFragment {
         btnAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mDb = AppDatabase.getInstance(getContext());
+
+                Intent intent = new Intent(getContext(), CentralActivity.class);
+                startActivity(intent);
+
+
+
+
+
+               /* Login con base de datos
+
+               mDb = AppDatabase.getInstance(getContext());
 
                 String nombre = etNombre.getText().toString();
                 String pass = etPass.getText().toString();
@@ -90,7 +100,7 @@ public class LoginDialogFragment extends DialogFragment {
                         }
 
                     }
-                });
+                });*/
 
             }
         });

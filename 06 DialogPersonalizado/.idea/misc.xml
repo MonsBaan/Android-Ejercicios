@@ -3,10 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/almi/Documents/Android-Ejercicios/06 DialogPersonalizado/app/src/main/res/layout/activity_camara.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/almi/Documents/Android-Ejercicios/06 DialogPersonalizado/app/src/main/res/layout/activity_central.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/almi/Documents/Android-Ejercicios/06 DialogPersonalizado/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/almi/Documents/Android-Ejercicios/06 DialogPersonalizado/app/src/main/res/layout/activity_register.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/almi/Documents/Android-Ejercicios/06 DialogPersonalizado/app/src/main/res/layout/activity_sensores.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/almi/Documents/Android-Ejercicios/06 DialogPersonalizado/app/src/main/res/layout/activity_voz.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/almi/Documents/Android-Ejercicios/06 DialogPersonalizado/app/src/main/res/layout/dialog_personalizado.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/almi/Documents/Android-Ejercicios/06 DialogPersonalizado/app/src/main/res/layout/item_grid_view.xml" value="0.20520833333333333" />
       </map>
     </option>
   </component>
