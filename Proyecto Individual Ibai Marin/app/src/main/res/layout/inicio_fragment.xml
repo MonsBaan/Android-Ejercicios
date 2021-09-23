@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="5dp"
-    android:orientation="vertical"
-    tools:context=".ui.inicio.InicioFragment">
+    android:background="@color/white"
+    android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/ivInicioLogoAlmi"
-        android:layout_width="match_parent"
-        android:layout_height="122dp"
-        android:src="@drawable/logoalmi" />
-
-    <TextView
-        android:id="@+id/tvInicioTitulo"
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@drawable/logoalmi" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
         android:text="Cursos"
         android:textAlignment="center"
-        android:textColor="#273378"
-        android:textSize="40sp" />
+        android:textColor="#303F9F"
+        android:textSize="34sp" />
 
     <ListView
         android:id="@+id/lvInicioCursos"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 </LinearLayout>
