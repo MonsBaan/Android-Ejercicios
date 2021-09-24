@@ -1,23 +1,28 @@
 package com.example.proyectoindividual.ui.galeria;
 
-import androidx.lifecycle.ViewModelProvider;
-
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.transition.TransitionInflater;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
+
 import com.example.proyectoindividual.R;
+import com.example.proyectoindividual.galeria.adaptadores.ViewPagerAdapter;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 public class GaleriaFragment extends Fragment {
 
     private GaleriaViewModel mViewModel;
+    private TabLayout tabGaleria = null;
+    private ViewPager2 vpGaleria = null;
 
     public static GaleriaFragment newInstance() {
         return new GaleriaFragment();
@@ -28,7 +33,7 @@ public class GaleriaFragment extends Fragment {
         super.onCreate(savedInstanceState);
         TransitionInflater inflater = TransitionInflater.from(getContext());
         setEnterTransition(inflater.inflateTransition(R.transition.slidedam));
-        setExitTransition(inflater.inflateTransition(R.transition.slidedam));
+
     }
 
     @Override
@@ -37,11 +42,22 @@ public class GaleriaFragment extends Fragment {
         return inflater.inflate(R.layout.galeria_fragment, container, false);
     }
 
+
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(GaleriaViewModel.class);
-        // TODO: Use the ViewModel
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        tabGaleria = view.findViewById(R.id.tabGaleria);
+        vpGaleria = view.findViewById(R.id.vpGaleria);
+
+        ViewPagerAdapter adapter = new ViewPagerAdapter(this);
+        vpGaleria.setAdapter(adapter);
+
+        String[] string = {"Interior", "Exterior"};
+
+        new TabLayoutMediator(tabGaleria, vpGaleria,
+                (tab, position) -> tab.setText(string[position])
+        ).attach();
     }
+
 
 }

@@ -29,7 +29,6 @@ public class MapaFragment extends Fragment implements OnMapReadyCallback {
         super.onCreate(savedInstanceState);
         TransitionInflater inflater = TransitionInflater.from(getContext());
         setEnterTransition(inflater.inflateTransition(R.transition.slidedam));
-        setExitTransition(inflater.inflateTransition(R.transition.slidedam));
     }
 
     @Override

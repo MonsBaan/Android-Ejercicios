@@ -8,6 +8,7 @@
     tools:context=".ui.galeria.GaleriaFragment">
 
     <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabGaleria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -24,7 +25,9 @@
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpGaleria"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
 
 </LinearLayout>
