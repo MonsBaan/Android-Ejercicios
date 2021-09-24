@@ -25,7 +25,7 @@ import java.util.Collections;
 public class FragmentGaleriaExterior extends Fragment {
     private RecyclerView recyclerView;
     private Context context;
-    private ArrayList<String> arrayImagenes;
+    private ArrayList<Integer> arrayImagenes;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -44,15 +44,16 @@ public class FragmentGaleriaExterior extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         arrayImagenes = new ArrayList();
-        rellenarDatos();
+
+        rellenar();
+
         View view = inflater.inflate(R.layout.fragment_galeria_exterior, container, false);
         // Add the following lines to create RecyclerView
         recyclerView = view.findViewById(R.id.rvExterior);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity().getApplicationContext(), 3));
 
-        recyclerView.setAdapter(new GaleriaAdapter(arrayImagenes,context));
-
+        recyclerView.setAdapter(new GaleriaAdapter(arrayImagenes, context));
 
         return view;
     }
@@ -63,8 +64,10 @@ public class FragmentGaleriaExterior extends Fragment {
 
     }
 
-    private void rellenarDatos() {
-        String[] stringArray = getResources().getStringArray(R.array.almiExterior);
-        Collections.addAll(arrayImagenes, stringArray);
+    private void rellenar() {
+        arrayImagenes.add(R.drawable.exterior_1);
+        arrayImagenes.add(R.drawable.exterior_2);
+        arrayImagenes.add(R.drawable.exterior_3);
+
     }
 }

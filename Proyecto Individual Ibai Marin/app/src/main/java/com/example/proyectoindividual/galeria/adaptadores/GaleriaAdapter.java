@@ -16,10 +16,10 @@ import java.util.ArrayList;
 
 public class GaleriaAdapter extends RecyclerView.Adapter<GaleriaAdapter.ViewHolder> {
 
-    private ArrayList<String> mDataset;
+    private ArrayList<Integer> mDataset;
     private Context context;
 
-    public GaleriaAdapter(ArrayList<String> myDataset, Context context) {
+    public GaleriaAdapter(ArrayList<Integer> myDataset, Context context) {
         this.mDataset = myDataset;
         this.context=context;
     }

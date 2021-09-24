@@ -10,7 +10,7 @@
         <item>SMR 2</item>
     </string-array>
 
-    <array name="almiInterior">
+    <string-array name="almiInterior">
         <item>@drawable/interior_1</item>
         <item>@drawable/interior_2</item>
         <item>@drawable/interior_3</item>
@@ -20,11 +20,14 @@
         <item>@drawable/interior_7</item>
         <item>@drawable/interior_8</item>
         <item>@drawable/interior_9</item>
-    </array>
 
-    <array name="almiExterior">
+    </string-array>
+
+    <string-array name="almiExterior">
         <item>@drawable/exterior_1</item>
         <item>@drawable/exterior_2</item>
         <item>@drawable/exterior_3</item>
-    </array>
+
+    </string-array>
+
 </resources>
