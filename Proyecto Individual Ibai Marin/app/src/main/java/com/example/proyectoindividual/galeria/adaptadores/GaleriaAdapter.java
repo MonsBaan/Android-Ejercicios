@@ -53,7 +53,7 @@ public class GaleriaAdapter extends RecyclerView.Adapter<GaleriaAdapter.ViewHold
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        Glide.with(this.context)
+        Glide.with(context)
                 .load(mDataset.get(position).getUrlImagen())
                 .into(holder.imageView);
 

@@ -78,7 +78,7 @@ public class FragmentGaleriaInterior extends Fragment {
         arrayImagenes.add(new ImagenGaleria("https://almi.eus/wp-content/uploads/2016/09/04-Entrada-Almi-1024x576.jpg", "Interior 10"));
         arrayImagenes.add(new ImagenGaleria("https://almi.eus/wp-content/uploads/2016/09/06-Aula-Ordenadores-1024x576.jpg", "Interior 11"));
         arrayImagenes.add(new ImagenGaleria("https://almi.eus/wp-content/uploads/2016/09/07-Aula-de-ordenadores-1024x576.jpg", "Interior 12"));
-        
+
     }
 
 
