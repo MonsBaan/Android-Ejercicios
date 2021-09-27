@@ -4,18 +4,17 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.DialogFragment;
-
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 
 import com.bumptech.glide.Glide;
 
@@ -65,18 +64,23 @@ public class GalleryDialogFragment extends DialogFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         String texto = getArguments().getString("texto");
-        int icon = getArguments().getInt("imagen");
+        String imagenUrl = getArguments().getString("imagen");
 
         tvDialog = view.findViewById(R.id.tvDialog);
         ivDialog = view.findViewById(R.id.ivDialog);
 
         tvDialog.setText(texto);
-        Glide
-                .with(this.context)
-                .load(icon)
+        Glide.with(context)
+                .load(imagenUrl)
                 .into(ivDialog);
 
-        ivDialog.setOnClickListener(new View.OnClickListener() {
+        Toast.makeText(context, texto, Toast.LENGTH_SHORT).show();
+
+
+
+        //IBAI: Esto me parece un poco overkill, pero ha servido para cerrar el dialog al presionar en cualquier lado
+        LinearLayout LLDialog = view.findViewById(R.id.LLDialog);
+        LLDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dismiss();
@@ -84,4 +88,5 @@ public class GalleryDialogFragment extends DialogFragment {
         });
 
     }
+
 }

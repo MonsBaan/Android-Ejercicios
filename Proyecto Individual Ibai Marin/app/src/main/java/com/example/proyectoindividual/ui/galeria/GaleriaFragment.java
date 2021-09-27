@@ -2,7 +2,6 @@ package com.example.proyectoindividual.ui.galeria;
 
 import android.os.Bundle;
 import android.transition.TransitionInflater;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.proyectoindividual.R;
@@ -20,7 +18,6 @@ import com.google.android.material.tabs.TabLayoutMediator;
 
 public class GaleriaFragment extends Fragment {
 
-    private GaleriaViewModel mViewModel;
     private TabLayout tabGaleria = null;
     private ViewPager2 vpGaleria = null;
 
@@ -31,14 +28,15 @@ public class GaleriaFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //IBAI: He tenido que meter estas dos lineas de codigo en todos los fragmentos del menu para animarlas
         TransitionInflater inflater = TransitionInflater.from(getContext());
         setEnterTransition(inflater.inflateTransition(R.transition.slidedam));
 
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.galeria_fragment, container, false);
     }
 
@@ -54,6 +52,7 @@ public class GaleriaFragment extends Fragment {
 
         String[] string = {"Interior", "Exterior"};
 
+        //IBAI: Esto ayuda a la sincronizacion entre el ViewPager y el TabView (El ArrayString de encima me pareció tremendo big brain)
         new TabLayoutMediator(tabGaleria, vpGaleria,
                 (tab, position) -> tab.setText(string[position])
         ).attach();

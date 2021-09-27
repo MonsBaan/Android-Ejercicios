@@ -2,7 +2,6 @@ package com.example.proyectoindividual.ui.mapa;
 
 import android.os.Bundle;
 import android.transition.TransitionInflater;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,16 +26,20 @@ public class MapaFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //TRANSICION DE SALIDA
         TransitionInflater inflater = TransitionInflater.from(getContext());
         setEnterTransition(inflater.inflateTransition(R.transition.slidedam));
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        //SE INFLA LA VISTA DEL FRAGMENTO DEL MAPA
         View vista = inflater.inflate(R.layout.mapa_fragment, container, false);
         mapView = vista.findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
+
+        //EN CASO DE QUE SEA UN FRAGMENTO SE AÑADE ESTO PARA HACER UNA LLAMADA ASINCRONA A LA FUNCION onMapReady
         mapView.getMapAsync(this::onMapReady);
 
         return vista;
@@ -45,6 +48,19 @@ public class MapaFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+
+        // Add a marker in Sydney and move the camera
+        LatLng latLng = new LatLng(43.27184249917673, -2.948704233416497);
+        mMap.addMarker(new MarkerOptions()
+                .position(latLng)
+                .title("Almi"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 18));
 
     }
 
@@ -72,17 +88,5 @@ public class MapaFragment extends Fragment implements OnMapReadyCallback {
         mapView.onLowMemory();
     }
 
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-
-        // Add a marker in Sydney and move the camera
-        LatLng latLng = new LatLng(43.27184249917673, -2.948704233416497);
-        mMap.addMarker(new MarkerOptions()
-                .position(latLng)
-                .title("Almi"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 18));
-
-    }
 
 }

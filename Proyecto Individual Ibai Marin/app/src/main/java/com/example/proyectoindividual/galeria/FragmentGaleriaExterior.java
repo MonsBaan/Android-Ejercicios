@@ -2,6 +2,9 @@ package com.example.proyectoindividual.galeria;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -9,21 +12,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.GridView;
-import android.widget.TextView;
-
 import com.example.proyectoindividual.GalleryDialogFragment;
 import com.example.proyectoindividual.ImagenGaleria;
 import com.example.proyectoindividual.R;
 import com.example.proyectoindividual.galeria.adaptadores.GaleriaAdapter;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 
 public class FragmentGaleriaExterior extends Fragment {
@@ -50,9 +44,8 @@ public class FragmentGaleriaExterior extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        arrayImagenes = new ArrayList();
 
-        rellenar();
+        rellenarGaleriaExterior();
 
         View view = inflater.inflate(R.layout.fragment_galeria_exterior, container, false);
         // Add the following lines to create RecyclerView
@@ -62,40 +55,6 @@ public class FragmentGaleriaExterior extends Fragment {
 
         recyclerView.setAdapter(new GaleriaAdapter(arrayImagenes, context));
 
-        recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
-            @Override
-            public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
-                View child = rv.findChildViewUnder(e.getX(), e.getY());
-                if (child != null) {
-
-                    TextView texto = child.findViewById(R.id.tvGaleria);
-                    String nombreImagen = texto.getText().toString();
-                    nombreImagen = nombreImagen.replace(" ", "_").toLowerCase();
-                    Bundle bundle = new Bundle();
-                    int icon = context.getResources().getIdentifier(nombreImagen, "drawable", context.getPackageName());
-
-                    bundle.putInt("imagen", icon);
-
-                    bundle.putString("texto", (String) texto.getText());
-                    dialog = new GalleryDialogFragment();
-                    dialog.show(getChildFragmentManager(), "GaleriaBig");
-                    dialog.setArguments(bundle);
-                    return true;
-                }
-                return false;
-
-            }
-
-            @Override
-            public void onTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
-
-            }
-
-            @Override
-            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-
-            }
-        });
         return view;
     }
 
@@ -105,13 +64,12 @@ public class FragmentGaleriaExterior extends Fragment {
 
     }
 
-    private void rellenar() {
-        imagenGaleria = new ImagenGaleria(R.drawable.exterior_1, "Exterior 1");
-        arrayImagenes.add(imagenGaleria);
-        imagenGaleria = new ImagenGaleria(R.drawable.exterior_2, "Exterior 2");
-        arrayImagenes.add(imagenGaleria);
-        imagenGaleria = new ImagenGaleria(R.drawable.exterior_3, "Exterior 3");
-        arrayImagenes.add(imagenGaleria);
+    private void rellenarGaleriaExterior() {
+        arrayImagenes = new ArrayList();
+
+        arrayImagenes.add(new ImagenGaleria("https://almi.eus/wp-content/uploads/2016/09/01-Almi-1024x576.jpg", "Exterior 1"));
+        arrayImagenes.add(new ImagenGaleria("https://almi.eus/wp-content/uploads/2019/11/IMG_20191125_084551.jpg", "Exterior 2"));
+        arrayImagenes.add(new ImagenGaleria("https://static.pacelma.es/wp-content/uploads/2013/04/BIZ.002.001.png", "Exterior 3"));
 
     }
 }

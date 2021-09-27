@@ -1,14 +1,11 @@
 package com.example.proyectoindividual.galeria.adaptadores;
 
-import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.proyectoindividual.galeria.FragmentGaleriaExterior;
 import com.example.proyectoindividual.galeria.FragmentGaleriaInterior;
-import com.example.proyectoindividual.galeria.ViewPagerFragments;
 
 public class ViewPagerAdapter extends FragmentStateAdapter {
     public ViewPagerAdapter(Fragment fragment) {

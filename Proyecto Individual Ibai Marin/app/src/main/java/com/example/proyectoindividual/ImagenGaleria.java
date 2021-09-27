@@ -1,23 +1,22 @@
 package com.example.proyectoindividual;
 
-import android.widget.ImageView;
-import android.widget.TextView;
-
 public class ImagenGaleria {
-    private int imagenGaleria;
+    //IBAI: Bastante directo. Es una clase para guardar las imagenes de la galeria y luego meterlo en un arraylist
+
+    private String urlImagen;
     private String textoGaleria;
 
-    public ImagenGaleria(int imagenGaleria, String textoGaleria) {
-        this.imagenGaleria = imagenGaleria;
+    public ImagenGaleria(String urlImagen, String textoGaleria) {
+        this.urlImagen = urlImagen;
         this.textoGaleria = textoGaleria;
     }
 
-    public int getImagenGaleria() {
-        return imagenGaleria;
+    public String getUrlImagen() {
+        return urlImagen;
     }
 
-    public void setImagenGaleria(int imagenGaleria) {
-        this.imagenGaleria = imagenGaleria;
+    public void setUrlImagen(String urlImagen) {
+        this.urlImagen = urlImagen;
     }
 
     public String getTextoGaleria() {

@@ -1,18 +1,11 @@
 package com.example.proyectoindividual.galeria;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.media.Image;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,7 +13,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectoindividual.GalleryDialogFragment;
 import com.example.proyectoindividual.ImagenGaleria;
 import com.example.proyectoindividual.R;
 import com.example.proyectoindividual.galeria.adaptadores.GaleriaAdapter;
@@ -32,7 +24,6 @@ public class FragmentGaleriaInterior extends Fragment {
     private Context context;
     private ArrayList<ImagenGaleria> arrayImagenes;
     private ImagenGaleria imagenGaleria;
-    private GalleryDialogFragment dialog;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -50,8 +41,7 @@ public class FragmentGaleriaInterior extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        arrayImagenes = new ArrayList();
-        rellenar();
+        rellenarGaleriaInterior();
 
         //METER IMAGENES EN ARRAY
 
@@ -59,44 +49,9 @@ public class FragmentGaleriaInterior extends Fragment {
         // Add the following lines to create RecyclerView
         recyclerView = view.findViewById(R.id.rvInterior);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new GridLayoutManager(getActivity().getApplicationContext(), 3));
+        recyclerView.setLayoutManager(new GridLayoutManager(context, 2));
         recyclerView.setAdapter(new GaleriaAdapter(arrayImagenes, context));
 
-
-        recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
-            @Override
-            public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
-                View child = rv.findChildViewUnder(e.getX(), e.getY());
-                if (child != null) {
-
-                    TextView texto = child.findViewById(R.id.tvGaleria);
-                    String nombreImagen = texto.getText().toString();
-                    nombreImagen = nombreImagen.replace(" ", "_").toLowerCase();
-                    Bundle bundle = new Bundle();
-                    int icon = context.getResources().getIdentifier(nombreImagen, "drawable", context.getPackageName());
-
-                    bundle.putInt("imagen", icon);
-
-                    bundle.putString("texto", (String) texto.getText());
-                    dialog = new GalleryDialogFragment();
-                    dialog.show(getChildFragmentManager(), "GaleriaBig");
-                    dialog.setArguments(bundle);
-                    return true;
-                }
-                return false;
-
-            }
-
-            @Override
-            public void onTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
-
-            }
-
-            @Override
-            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-
-            }
-        });
         return view;
     }
 
@@ -108,25 +63,22 @@ public class FragmentGaleriaInterior extends Fragment {
 
     }
 
-    private void rellenar() {
-        imagenGaleria = new ImagenGaleria(R.drawable.interior_1, "Interior 1");
-        arrayImagenes.add(imagenGaleria);
-        imagenGaleria = new ImagenGaleria(R.drawable.interior_2, "Interior 2");
-        arrayImagenes.add(imagenGaleria);
-        imagenGaleria = new ImagenGaleria(R.drawable.interior_3, "Interior 3");
-        arrayImagenes.add(imagenGaleria);
-        imagenGaleria = new ImagenGaleria(R.drawable.interior_4, "Interior 4");
-        arrayImagenes.add(imagenGaleria);
-        imagenGaleria = new ImagenGaleria(R.drawable.interior_5, "Interior 5");
-        arrayImagenes.add(imagenGaleria);
-        imagenGaleria = new ImagenGaleria(R.drawable.interior_6, "Interior 6");
-        arrayImagenes.add(imagenGaleria);
-        imagenGaleria = new ImagenGaleria(R.drawable.interior_7, "Interior 7");
-        arrayImagenes.add(imagenGaleria);
-        imagenGaleria = new ImagenGaleria(R.drawable.interior_8, "Interior 8");
-        arrayImagenes.add(imagenGaleria);
-        imagenGaleria = new ImagenGaleria(R.drawable.interior_9, "Interior 9");
-        arrayImagenes.add(imagenGaleria);
+    private void rellenarGaleriaInterior() {
+        arrayImagenes = new ArrayList();
+
+        arrayImagenes.add(new ImagenGaleria("https://almi.eus/wp-content/uploads/2021/02/IMG_20210127_161001-1170x780.jpg", "Interior 1"));
+        arrayImagenes.add(new ImagenGaleria("https://almi.eus/wp-content/uploads/2019/10/IMG20191016111605-1170x780.jpg", "Interior 2"));
+        arrayImagenes.add(new ImagenGaleria("https://almi.eus/wp-content/uploads/2018/11/IMG-20181113-WA0005.jpg", "Interior 3"));
+        arrayImagenes.add(new ImagenGaleria("https://almi.eus/wp-content/uploads/2018/11/IMG_20181112_094736-1170x780.jpg", "Interior 4"));
+        arrayImagenes.add(new ImagenGaleria("https://almi.eus/wp-content/uploads/2017/03/20170224_080620-1170x780.jpg", "Interior 5"));
+        arrayImagenes.add(new ImagenGaleria("https://almi.eus/wp-content/uploads/2016/12/Laguntzaile-Digitala1-1170x780.png", "Interior 6"));
+        arrayImagenes.add(new ImagenGaleria("https://almi.eus/wp-content/uploads/2017/06/Espacio-Cargdioprotegido.png", "Interior 7"));
+        arrayImagenes.add(new ImagenGaleria("https://almi.eus/wp-content/uploads/2016/09/02-Entrada-Almi-1024x576.jpg", "Interior 8"));
+        arrayImagenes.add(new ImagenGaleria("https://almi.eus/wp-content/uploads/2016/09/03-Entrada-Almi-1024x576.jpg", "Interior 9"));
+        arrayImagenes.add(new ImagenGaleria("https://almi.eus/wp-content/uploads/2016/09/04-Entrada-Almi-1024x576.jpg", "Interior 10"));
+        arrayImagenes.add(new ImagenGaleria("https://almi.eus/wp-content/uploads/2016/09/06-Aula-Ordenadores-1024x576.jpg", "Interior 11"));
+        arrayImagenes.add(new ImagenGaleria("https://almi.eus/wp-content/uploads/2016/09/07-Aula-de-ordenadores-1024x576.jpg", "Interior 12"));
+        
     }
 
 
