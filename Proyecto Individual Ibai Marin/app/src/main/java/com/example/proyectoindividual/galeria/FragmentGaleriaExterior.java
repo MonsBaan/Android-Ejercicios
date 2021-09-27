@@ -11,10 +11,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.TextView;
 
+import com.example.proyectoindividual.GalleryDialogFragment;
+import com.example.proyectoindividual.ImagenGaleria;
 import com.example.proyectoindividual.R;
 import com.example.proyectoindividual.galeria.adaptadores.GaleriaAdapter;
 
@@ -25,7 +29,10 @@ import java.util.Collections;
 public class FragmentGaleriaExterior extends Fragment {
     private RecyclerView recyclerView;
     private Context context;
-    private ArrayList<Integer> arrayImagenes;
+    private ArrayList<ImagenGaleria> arrayImagenes;
+    private ImagenGaleria imagenGaleria;
+    private GalleryDialogFragment dialog;
+
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -55,6 +62,40 @@ public class FragmentGaleriaExterior extends Fragment {
 
         recyclerView.setAdapter(new GaleriaAdapter(arrayImagenes, context));
 
+        recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+            @Override
+            public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
+                View child = rv.findChildViewUnder(e.getX(), e.getY());
+                if (child != null) {
+
+                    TextView texto = child.findViewById(R.id.tvGaleria);
+                    String nombreImagen = texto.getText().toString();
+                    nombreImagen = nombreImagen.replace(" ", "_").toLowerCase();
+                    Bundle bundle = new Bundle();
+                    int icon = context.getResources().getIdentifier(nombreImagen, "drawable", context.getPackageName());
+
+                    bundle.putInt("imagen", icon);
+
+                    bundle.putString("texto", (String) texto.getText());
+                    dialog = new GalleryDialogFragment();
+                    dialog.show(getChildFragmentManager(), "GaleriaBig");
+                    dialog.setArguments(bundle);
+                    return true;
+                }
+                return false;
+
+            }
+
+            @Override
+            public void onTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
+
+            }
+
+            @Override
+            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+            }
+        });
         return view;
     }
 
@@ -65,9 +106,12 @@ public class FragmentGaleriaExterior extends Fragment {
     }
 
     private void rellenar() {
-        arrayImagenes.add(R.drawable.exterior_1);
-        arrayImagenes.add(R.drawable.exterior_2);
-        arrayImagenes.add(R.drawable.exterior_3);
+        imagenGaleria = new ImagenGaleria(R.drawable.exterior_1, "Exterior 1");
+        arrayImagenes.add(imagenGaleria);
+        imagenGaleria = new ImagenGaleria(R.drawable.exterior_2, "Exterior 2");
+        arrayImagenes.add(imagenGaleria);
+        imagenGaleria = new ImagenGaleria(R.drawable.exterior_3, "Exterior 3");
+        arrayImagenes.add(imagenGaleria);
 
     }
 }
