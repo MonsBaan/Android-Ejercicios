@@ -66,10 +66,8 @@ public class GalleryDialogFragment extends DialogFragment {
         String texto = getArguments().getString("texto");
         String imagenUrl = getArguments().getString("imagen");
 
-        tvDialog = view.findViewById(R.id.tvDialog);
         ivDialog = view.findViewById(R.id.ivDialog);
 
-        tvDialog.setText(texto);
         Glide.with(context)
                 .load(imagenUrl)
                 .into(ivDialog);
