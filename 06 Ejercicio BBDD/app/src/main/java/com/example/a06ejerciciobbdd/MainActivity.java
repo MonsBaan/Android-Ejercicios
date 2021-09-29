@@ -18,7 +18,6 @@ import com.example.a06ejerciciobbdd.bbdd.AppDatabase;
 import com.example.a06ejerciciobbdd.bbdd.AppExecutors;
 import com.example.a06ejerciciobbdd.model.Personaje;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     private PersonajesAdapter personajesAdapter = null;
 
-    private LoginDialogFragment dialog = null;
+    private GalleryDialogFragment dialog = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         btnAddPj.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialog = new LoginDialogFragment();
+                dialog = new GalleryDialogFragment();
                 dialog.show(getSupportFragmentManager(), "Añadir");
             }
         });

@@ -50,7 +50,7 @@ public class GaleriaFragment extends Fragment {
         ViewPagerAdapter adapter = new ViewPagerAdapter(this);
         vpGaleria.setAdapter(adapter);
 
-        String[] string = {"Interior", "Exterior"};
+        String[] string = {"Interior", "Exterior", "Entorno"};
 
         //IBAI: Esto ayuda a la sincronizacion entre el ViewPager y el TabView (El ArrayString de encima me pareció tremendo big brain)
         new TabLayoutMediator(tabGaleria, vpGaleria,

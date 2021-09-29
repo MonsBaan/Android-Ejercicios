@@ -30,5 +30,8 @@ public interface ImagenDao {
     @Query("SELECT * FROM Imagen WHERE tipoFoto = 1 ORDER BY id")
     LiveData<List<Imagen>> loadExteriorImages();
 
+    @Query("SELECT * FROM Imagen WHERE tipoFoto = 2 ORDER BY id")
+    LiveData<List<Imagen>> loadEntornoImages();
+
 
 }

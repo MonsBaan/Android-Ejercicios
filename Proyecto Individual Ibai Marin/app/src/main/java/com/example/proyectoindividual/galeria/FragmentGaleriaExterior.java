@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.proyectoindividual.GalleryDialogFragment;
 import com.example.proyectoindividual.R;
 import com.example.proyectoindividual.bbdd.AppDatabase;
-import com.example.proyectoindividual.bbdd.AppExecutors;
+import com.example.proyectoindividual.bbdd.AppExecutorsGallery;
 import com.example.proyectoindividual.bbdd.model.Imagen;
 import com.example.proyectoindividual.galeria.adaptadores.GaleriaAdapter;
 
@@ -31,7 +31,6 @@ public class FragmentGaleriaExterior extends Fragment {
     private ArrayList<Imagen> arrayImagenes;
     private AppDatabase mDb;
     private GaleriaAdapter adapter;
-
 
     private GalleryDialogFragment dialog;
 
@@ -86,7 +85,7 @@ public class FragmentGaleriaExterior extends Fragment {
                 mDb = AppDatabase.getInstance(getContext());
 
                 rellenarGaleriaExterior();
-                AppExecutors.getInstance().getDiskIP().execute(new Runnable() {
+                AppExecutorsGallery.getInstance().getDiskIP().execute(new Runnable() {
                     @Override
                     public void run() {
                         //Imagen imagen = new Imagen(titulo, url, 0);

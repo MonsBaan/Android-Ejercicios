@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.proyectoindividual.R;
 import com.example.proyectoindividual.bbdd.AppDatabase;
-import com.example.proyectoindividual.bbdd.AppExecutors;
+import com.example.proyectoindividual.bbdd.AppExecutorsGallery;
 import com.example.proyectoindividual.bbdd.model.Imagen;
 import com.example.proyectoindividual.galeria.adaptadores.GaleriaAdapter;
 
@@ -90,7 +90,7 @@ public class FragmentGaleriaInterior extends Fragment {
                 mDb = AppDatabase.getInstance(getContext());
 
                 rellenarGaleriaInterior();
-                AppExecutors.getInstance().getDiskIP().execute(new Runnable() {
+                AppExecutorsGallery.getInstance().getDiskIP().execute(new Runnable() {
                     @Override
                     public void run() {
                         //Imagen imagen = new Imagen(titulo, url, 0);

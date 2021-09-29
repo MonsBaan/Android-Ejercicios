@@ -19,7 +19,7 @@ import com.bumptech.glide.Glide;
 import com.example.proyectoindividual.GalleryDialogFragment;
 import com.example.proyectoindividual.R;
 import com.example.proyectoindividual.bbdd.AppDatabase;
-import com.example.proyectoindividual.bbdd.AppExecutors;
+import com.example.proyectoindividual.bbdd.AppExecutorsGallery;
 import com.example.proyectoindividual.bbdd.model.Imagen;
 
 import java.util.ArrayList;
@@ -123,7 +123,7 @@ public class GaleriaAdapter extends RecyclerView.Adapter<GaleriaAdapter.ViewHold
     }
 
     private void eliminar(int id) {
-        AppExecutors.getInstance().getDiskIP().execute(new Runnable() {
+        AppExecutorsGallery.getInstance().getDiskIP().execute(new Runnable() {
             @Override
             public void run() {
                 Imagen imagen = mDb.imagenDao().loadImagenById(id);

@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 
 import com.example.proyectoindividual.bbdd.model.Imagen;
 
-@Database(entities = {Imagen.class}, version = 1, exportSchema = false)
+@Database(entities = {Imagen.class}, version = 2, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     private static final String LOG_TAG = AppDatabase.class.getSimpleName();
     private static final Object LOCK = new Object();

@@ -6,13 +6,17 @@ import android.transition.TransitionInflater;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.proyectoindividual.LoginDialogFragment;
 import com.example.proyectoindividual.R;
 import com.example.proyectoindividual.adaptadores.CursosAdapter;
 
@@ -54,12 +58,15 @@ public class InicioFragment extends Fragment {
         mViewModel = new ViewModelProvider(this).get(InicioViewModel.class);
         // TODO: Use the ViewModel
 
-
         final ListView lvCursos = getView().findViewById(R.id.lvInicioCursos);
         rellenarDatos();
 
         CursosAdapter adapter = new CursosAdapter(this, arrayCursos);
         lvCursos.setAdapter(adapter);
+
+
+
+
     }
 
     private void rellenarDatos() {
